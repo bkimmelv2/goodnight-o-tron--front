@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom'
 
-const SingleBook = ({ books, edit }) => {
+const SingleBook = ({ books, edit, deleteBook }) => {
     const params = useParams()
 
     const id = parseInt(params.id)
@@ -14,6 +14,7 @@ const SingleBook = ({ books, edit }) => {
             <img src={book.image} alt={book.title} />
             <br />
             <button onClick={(e) => edit(book)}>Edit Book</button>
+            <button onClick={(e) => deleteBook(book)}>Delete Book</button>
         </div>
     )
 }

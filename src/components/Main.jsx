@@ -68,6 +68,16 @@ const Main = (props) => {
         getBooks()
     }
 
+    // Delete Book //
+    const deleteBook = async (book) => {
+        await fetch(url + `/books/${book.id}/`, {
+            method: 'delete'
+        })
+
+        getBooks()
+        navigate('/books')
+    }
+
     // useEffect //
     useEffect(() => {
         getBooks()
@@ -91,7 +101,7 @@ const Main = (props) => {
                 />
                 <Route 
                     path='/books/:id'
-                    element={<SingleBook books={books} edit={getTargetBook}/>}
+                    element={<SingleBook books={books} edit={getTargetBook} deleteBook={deleteBook} />}
                 />
                 <Route 
                     path='/newbook'
