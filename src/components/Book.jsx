@@ -2,11 +2,13 @@ import { Link } from 'react-router-dom'
 
 const Book = ({ book }) => {
 
+
     return (
-        <div>
-            <img src={book.fields.image} alt={book.fields.title} />
-            {/* ADD A LINK HERE LATER TO SHOW PAGE */}
-            <h3>{book.fields.title}</h3>
+        <div className='Book'>
+            <Link to={`/books/${book.id}`}>
+                <img src={book.image} alt={book.title} />
+            </Link>
+            <h3>{book.title}</h3>
         </div>
     )
 }

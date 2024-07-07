@@ -1,4 +1,4 @@
-import Book from '../components/Book'
+import RandomBook from '../components/RandomBook'
 
 const Random = ({ randomBooks, getRandomBooks }) => {
 
@@ -7,8 +7,8 @@ const Random = ({ randomBooks, getRandomBooks }) => {
         <div>
             <button onClick={getRandomBooks}>GENERATE ZZZ</button>
             {/* Pass Book component with a book prop of book1 or book2 */}
-            <Book book={randomBooks[0]}/>
-            <Book book={randomBooks[1]}/>
+            <RandomBook book={randomBooks[0]}/>
+            <RandomBook book={randomBooks[1]}/>
         </div>
     )
 }
