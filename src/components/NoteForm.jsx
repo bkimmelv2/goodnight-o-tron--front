@@ -35,7 +35,7 @@ const NoteForm = ( { targetBook } ) => {
             <h4>Add a note!</h4>
             <br />
             <form onSubmit={handleSubmission}>
-            <label for='book'>For Book:</label>
+            <label for='book'>For Book: </label>
                 <input 
                     type='text'
                     onChange={handleChange}
@@ -43,14 +43,14 @@ const NoteForm = ( { targetBook } ) => {
                     value={formData.book}
                     disabled
                 />
-                <label for='text'>Note:</label>
+                <label for='text'>Note: </label>
                 <input 
                     type='text'
                     onChange={handleChange}
                     name='text'
                     placeholder='Leave a brief note!'
                 />
-                <label for='score'>Attention Score (1-5):</label>
+                <label for='score'>Attention Score (1-5): </label>
                 <input 
                     type='number'
                     onChange={handleChange}

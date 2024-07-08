@@ -5,6 +5,7 @@ import Random from '../pages/Random'
 import AllBooks from '../pages/AllBooks'
 import SingleBook from '../pages/SingleBook'
 import BookForm from '../pages/BookForm'
+import AllNotes from '../pages/AllNotes'
 
 
 const Main = (props) => {
@@ -34,6 +35,14 @@ const Main = (props) => {
         const response = await fetch(url + '/books/')
         const data = await response.json()
         setBooks(data)
+    }
+
+    // GET ALL NOTES FUNCTION //
+    const [notes, setNotes] = useState([])
+    const getNotes = async () => {
+        const response = await fetch(url + '/notes/')
+        const data = await response.json()
+        setNotes(data)
     }
 
     // CREATE BOOK FUNCTION //
@@ -81,6 +90,7 @@ const Main = (props) => {
     // useEffect //
     useEffect(() => {
         getBooks()
+        getNotes()
     })
 
     return (
@@ -110,6 +120,10 @@ const Main = (props) => {
                 <Route 
                     path='/editbook'
                     element={<BookForm initialBook={targetBook} handleSubmit={updateBook} buttonLabel='Update Book' />}
+                />
+                <Route 
+                    path='/notes'
+                    element={<AllNotes notes={notes} />}
                 />
             </Routes>
         </div>
