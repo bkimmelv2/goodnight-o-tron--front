@@ -6,6 +6,8 @@ import AllBooks from '../pages/AllBooks'
 import SingleBook from '../pages/SingleBook'
 import BookForm from '../pages/BookForm'
 import AllNotes from '../pages/AllNotes'
+import SingleNote from '../pages/SingleNote'
+import EditNote from '../pages/EditNote'
 
 
 const Main = (props) => {
@@ -64,6 +66,13 @@ const Main = (props) => {
         navigate('/editbook')
     }
 
+    // Get Targeted Note for Editing //
+    const [targetNote, setTargetNote] = useState(null)
+    const getTargetNote = (note) => {
+        setTargetNote(note)
+        navigate('/editnote')
+    }
+
     // Update Book //
     const updateBook = async (book) => {
         await fetch(url + `/books/${book.id}/`, {
@@ -77,6 +86,19 @@ const Main = (props) => {
         getBooks()
     }
 
+    // Update Note //
+    const updateNote = async (note) => {
+        await fetch(url + `/notes/${note.id}/`, {
+            method: 'put',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(note)
+        })
+
+        getNotes()
+    }
+
     // Delete Book //
     const deleteBook = async (book) => {
         await fetch(url + `/books/${book.id}/`, {
@@ -87,10 +109,23 @@ const Main = (props) => {
         navigate('/books')
     }
 
+    // Delete Note //
+    const deleteNote = async (note) => {
+        await fetch(url + `/notes/${note.id}/`, {
+            method: 'delete'
+        })
+
+        getNotes()
+        navigate('/notes')
+    }
+
     // useEffect //
+    // const fetchBoth = async () => {
+    //     await getBooks()
+    //     await getNotes()
+    // }
     useEffect(() => {
         getBooks()
-        getNotes()
     })
 
     return (
@@ -99,11 +134,11 @@ const Main = (props) => {
             <Routes>
                 <Route 
                     path='/'
-                    element={<Home getRandomBooks={getRandomBooks} />}
+                    element={<Home getRandomBooks={getRandomBooks} getNotes={getNotes} />}
                 />
                 <Route 
                     path='/random'
-                    element={<Random randomBooks={randomBooks} getRandomBooks={getRandomBooks} />}
+                    element={<Random randomBooks={randomBooks} getNotes={getNotes} />}
                 />
                 <Route 
                     path='/books'
@@ -111,7 +146,7 @@ const Main = (props) => {
                 />
                 <Route 
                     path='/books/:id'
-                    element={<SingleBook books={books} edit={getTargetBook} deleteBook={deleteBook} />}
+                    element={<SingleBook books={books} edit={getTargetBook} deleteBook={deleteBook} notes={notes} />}
                 />
                 <Route 
                     path='/newbook'
@@ -124,6 +159,14 @@ const Main = (props) => {
                 <Route 
                     path='/notes'
                     element={<AllNotes notes={notes} />}
+                />
+                <Route 
+                    path='/notes/:id'
+                    element={<SingleNote notes={notes} edit={getTargetNote} deleteNote={deleteNote} />}
+                />
+                <Route 
+                    path='/editnote'
+                    element={<EditNote note={targetNote} handleSubmit={updateNote} />}
                 />
             </Routes>
         </div>

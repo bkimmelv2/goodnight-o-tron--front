@@ -1,7 +1,9 @@
+import { useEffect } from 'react'
 
-
-const Home = ({ getRandomBooks }) => {
-
+const Home = ({ getRandomBooks, getNotes }) => {
+    useEffect(() => {
+        getNotes()
+    })
 
     return (
         <div>

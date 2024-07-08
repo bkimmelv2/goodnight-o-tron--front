@@ -1,12 +1,16 @@
-import { useParams, Link } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import Note from '../components/Note'
 
-const SingleBook = ({ books, edit, deleteBook }) => {
+const SingleBook = ({ books, edit, deleteBook, notes }) => {
     const params = useParams()
 
     const id = parseInt(params.id)
     const book = books.find((book) => {
         return book.id === id
     })
+
+    const selectNotes = notes.filter((note) => note.book === book.title)
+
 
     return (
         <div>
@@ -15,6 +19,7 @@ const SingleBook = ({ books, edit, deleteBook }) => {
             <br />
             <button onClick={(e) => edit(book)}>Edit Book</button>
             <button onClick={(e) => deleteBook(book)}>Delete Book</button>
+            {selectNotes.map((note) => <Note note={note} />)}
         </div>
     )
 }

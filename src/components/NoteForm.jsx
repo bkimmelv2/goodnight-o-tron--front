@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const NoteForm = ( { targetBook } ) => {
+const NoteForm = ( { targetBook, getNotes } ) => {
     const [buttonDisabled, setButtonDisabled] = useState(false)
 
     const nullNote = {
@@ -18,13 +18,14 @@ const NoteForm = ( { targetBook } ) => {
             },
             body: JSON.stringify(newNote)
         })
+        getNotes()
     }
 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value})
     }
 
-    const handleSubmission = async (e) => {
+    const handleSubmission = (e) => {
         e.preventDefault()
         setButtonDisabled(true)
         handleSubmit(formData)
