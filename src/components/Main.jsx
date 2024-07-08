@@ -4,7 +4,7 @@ import Home from '../pages/Home'
 import Random from '../pages/Random'
 import AllBooks from '../pages/AllBooks'
 import SingleBook from '../pages/SingleBook'
-import BookForm from '../components/BookForm'
+import BookForm from '../pages/BookForm'
 
 
 const Main = (props) => {
@@ -49,7 +49,7 @@ const Main = (props) => {
         getBooks()
     }
 
-    // Get Targeted Book Function //
+    // Get Targeted Book for Editing //
     const getTargetBook = (book) => {
         setTargetBook(book)
         navigate('/editbook')
