@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Goodnight-o-Tron
+## An app for all of your bedtime reading needs!
+Do you have children who like to read bedtime stories? Are you sick of having to pick the books out yourself every single night? Well I have the solution for you! The Goodnight-o-Tron is a simple app to make bedtime reading a breeze. Simply load in the collection of books you have at home and hit GENERATE on the home page. This will select two books at random for you to read to your little one. After reading time is over, you have the option to leave a brief note about that specific reading experience. This will also record the date you read the book as well as an attention score from 1-5 that you can use to gauge how interested your child was at that moment. Once a note is submitted, it can be viewed on the All Notes screen. Opening an individual Book entry in your Library will also show all notes associated with that book.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Save some memories and make bedtime easy with the Goodnight-o-Tron!
 
-## Available Scripts
+[Goodnight-o-Tron App](https://goodnight-o-tron.netlify.app/)
 
-In the project directory, you can run:
+## Technologies Used
+![My Skills](https://skillicons.dev/icons?i=js,html,css,py,postgres,django,heroku,react,tailwind,netlify)
 
-### `npm start`
+JavaScript, HTML, CSS, Python, PostgreSQL, Django, Heroku, React, TailwindCSS, Netlify
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installation Steps (if running locally)
+1. Pull down files from this repo.
+2. Run 'npm i' in your terminal to download all dependencies.
+3. Add a .env file and the variable located in the backend repo's README.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## User Stories
+- As a user I want to be able to view the home screen of the app and click "Generate" to generate 2 random books from my library.
+- As a user I want to be able to add a note to each generated book after it has been generated.
+- As a user I want to be able to view, add, edit, and delete books in my library.
+- As a user I want to be able to view, add, edit, and delete notes associated with a specific book.
 
-### `npm test`
+## Wireframes
+Home Page:
+![Screenshot 2024-06-18 at 9 11 02 PM](https://media.git.generalassemb.ly/user/51820/files/4001f294-e417-4eea-b63d-b56cacd00f1f)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Book Library Page:
+![Screenshot 2024-06-18 at 9 20 21 PM](https://media.git.generalassemb.ly/user/51820/files/d03f5b5b-3e1e-48ac-80b7-b6d85de66085)
 
-### `npm run build`
+All Notes Page:
+![Screenshot 2024-06-18 at 9 17 30 PM](https://media.git.generalassemb.ly/user/51820/files/e72caae9-ded4-47c8-b7d9-de5a29a28650)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Book Details Page:
+![Screenshot 2024-06-18 at 9 24 26 PM](https://media.git.generalassemb.ly/user/51820/files/3eb87b36-d4ad-440b-9025-49a2bec400f0)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Note Details Page:
+![Screenshot 2024-06-18 at 9 25 43 PM](https://media.git.generalassemb.ly/user/51820/files/927a569b-c63d-4ac0-9888-8cb4e138f8b3)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Unsolved Problems & Future Additions
+- When a book name is edited, the notes associated with it will not adjust their names and as a result will not appear on that book's show page. This is being worked on.
+- When a book is deleted, all associated notes remain in the list of all notes. In the future, all associated notes will be deleted.
+- User login feature to be added in later version. Will track each user's book libraries individually.
