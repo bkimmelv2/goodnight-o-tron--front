@@ -8,7 +8,7 @@ const Book = ({ book }) => {
             <Link to={`/books/${book.id}`}>
                 <img src={book.image} alt={book.title} />
             </Link>
-            <h3>{book.title}</h3>
+            {/* <h3>{book.title}</h3> */}
         </div>
     )
 }
