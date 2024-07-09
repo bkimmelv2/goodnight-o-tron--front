@@ -44,6 +44,7 @@ const NoteForm = ( { targetBook, getNotes } ) => {
                     value={formData.book}
                     disabled
                 />
+                <br />
                 <label for='text'>Note: </label>
                 <input 
                     type='text'
@@ -51,6 +52,7 @@ const NoteForm = ( { targetBook, getNotes } ) => {
                     name='text'
                     placeholder='Leave a brief note!'
                 />
+                <br />
                 <label for='score'>Attention Score (1-5): </label>
                 <input 
                     type='number'
@@ -59,6 +61,7 @@ const NoteForm = ( { targetBook, getNotes } ) => {
                     min='1'
                     max='5'
                 />
+                <br />
                 <input type='submit' value='Submit Note' disabled={buttonDisabled} />
             </form>
         </div>
